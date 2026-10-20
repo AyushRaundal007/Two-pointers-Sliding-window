@@ -87,7 +87,19 @@ int reverseInt(int x){
     return result;
 }
 
+int reverseInt_1(int x){
+    int ans=0;
+    while(x!=0){
+        if((ans>INT_MAX/10)||(ans<INT_MIN/10)){
+            return 0;
+        }
+        ans=ans*10 + x%10;
+        x/=10;
+    }
+    return ans;
+}
+
 int main(){
     cout << reverseInt(123) << endl;
-    cout << reverseInt(1999999999);
+    cout << reverseInt_1(1999999999);
 }
